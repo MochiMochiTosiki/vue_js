@@ -6,7 +6,8 @@ new Vue({
     methods: {
       onclick: function() {
         // this.list[1] = '茶パジャマ';
-        Vue.set(this.list, 1, '茶パジャマ');
+        // Vue.set(this.list, 1, '茶パジャマ');
+        this.list.shift();
       }
     }
 })
