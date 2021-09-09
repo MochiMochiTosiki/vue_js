@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Vue.js</title>
+    </head>
+    <body>
+        <div id="app">
+            <form>
+                <label for="show">表示</label>
+                <input type="checkbox" id="show" v-model="show" />
+            </form>
+            <div id="panel" v-if="show">
+                <h3>RSSフィールドについて</h3>
+                <div>WINGSでは、弊社執筆の書籍・雑誌・WEB記事の。。。</div>
+            </div>
+            <div v-else>現在、非表示状態です。</div>
+
+            <form>
+                <label for="holiday">祝日</label>
+                <select id="holiday" v-model="holiday">
+                    <option value="">祝日を選択してください。</option>
+                    <option value="new">元日</option>
+                    <option value="child">こどもの日</option>
+                    <option value="culture">文化の日</option>
+                    <option value="labor">勤労感謝の日</option>
+                </select>
+            </form>
+            <div v-if="holiday==='new'">1月1日。年の初めを占う</div>
+            <div v-if="holiday==='child'">5月5日。子供の人格を重んじ</div>
+            <div v-if="holiday==='culture'">11月3日。自由と平和を愛し</div>
+            <div v-if="holiday==='labor'">11月23日。勤労をたつとび</div>
+            <div v-else>なにも選択されていません。</div>
+
+            <fieldset>
+                <legend>支払い方法</legend>
+                クレジットカード:
+                <input type="radio" name="pay" value="credit" v-model="pay" />
+                銀行振り込み:
+                <input type="radio" name="pay" value="bank" v-model="pay" />
+                <hr />
+                <div v-if="pay === 'credit'">
+                    口座番号：
+                    <input type="text" key="credit"/>
+                </div>
+                <div v-else-if="pay === 'bank'">
+                    口座番号：
+                    <input type="text" key="bank" />
+                </div>
+            </fieldset>
+        </div>
+        <script src="lib/vue.js"></script>
+        <script src="js/if.js"></script>
+    </body>
+</html>
