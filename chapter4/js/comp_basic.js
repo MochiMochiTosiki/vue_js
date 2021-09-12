@@ -1,12 +1,10 @@
-Vue.component('my-hello', {
-  template: '<div>こんにちは、{{ name }} ! </div>',
-  data: function() {
-    return {
-      name: 'Vue.js'
-    };
-  }
-});
+let MyHello = {
+  template: '<div>こんにちは、Vue.js!</div>'
+}
 
 new Vue({
-  el: '#app'
+  el: '#app',
+  component: {
+    'my-hello': MyHello
+  }
 });
