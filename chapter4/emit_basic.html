@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Vue.js</title>
+    </head>
+    <body>
+        <div id="app">
+            <p>現在地: {{current}}</p>
+            <my-counter step="1" v-on:plus="onplus"></my-counter>
+            <my-counter step="2" v-on:plus="onplus"></my-counter>
+            <my-counter step="-1" v-on:plus="onplus"></my-counter>
+            <my-counter step="-1" v-on:click.native="onplus"></my-counter>
+            <br>
+            <my-input step="-1" v-on:focus.native="onfocus"></my-input>
+        </div>
+        <script src="../lib/vue.js"></script>
+        <script src="js/emit_basic.js"></script>
+    </body>
+</html>
