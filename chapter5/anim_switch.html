@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Vue.js</title>
+        <link rel="stylesheet" href="css/anim_switch.css" />
+    </head>
+    <body>
+        <div id="app">
+            <input type="button" value="切り替え" v-on:click="onclick" />
+            <transition>
+                <div class="panel" v-bind:key="id">
+                    {{ panels[id] }}
+                </div>
+            </transition>
+        </div>
+        <script src="../lib/vue.js"></script>
+        <script src="js/anim_switch.js"></script>
+    </body>
+</html>

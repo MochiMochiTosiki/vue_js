@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Vue.js</title>
+        <link rel="stylesheet" href="css/tab.css" />
+    </head>
+    <body>
+        <div id="app">
+            <my-input v-model="message"></my-input>
+            <p>入力値：{{message}}</p>
+            <br>
+            <my-input v-bind:value.sync="message"></my-input>
+            <p>入力値：{{message}}</p>
+        </div>
+        <script src="../lib/vue.js"></script>
+        <script src="js/model_basic.js"></script>
+    </body>
+</html>
