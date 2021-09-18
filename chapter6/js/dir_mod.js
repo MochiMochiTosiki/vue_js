@@ -1,20 +1,19 @@
-let hook = function(el, binding) {
-  if (binding.value === binding.oldValue) { return; }
-  if (binding.modifiers.border) {
-    el.style.borderColor = binding.value;
-    el.style.borderStyle = 'solid';
-  } else {
-    el.style.backgroundColor = binding.value;
-  }
-};
-
-
-Vue.directive('highlight', {
-  bind: hook,
-  update: function(el, binding, vnode, oldVnode) {
-    if (!binding.modifiers.once) {
-      hook(el, binding)
-    }
+Vue.directive('highlight', function(el, binding, vnode, oldVnode) {
+  switch(binding.arg) {
+    case 'bg':
+      el.style.backgroundColor = binding.value;
+      break;
+      case 'border':
+        el.style.borderStyle = 'solid';
+        el.style.borderWidth = '1px';
+        el.style.borderColor = binding.value;
+        break;
+      case 'text':
+        el.style.fontWeight = 'bold';
+        el.style.color = binding.value;
+        break;
+      default:
+          throw new Error("指定のハイライトは使えません。");
   }
 });
 
