@@ -4,6 +4,13 @@
     <router-link to="/about">About</router-link>
     <router-link to="/article/108">記事: No.188</router-link>
   </div>
+  <br>
+  <div id="app">
+    <img src="./assets/logo.png"/>
+    <router-view/>
+    <hr />
+    <router-view name="sub"/>
+  </div>
   <router-view/>
 </template>
 
