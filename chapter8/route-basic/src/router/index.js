@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Article from '../components/Article.vue'
+import Page from '../components/Page.vue'
 
 const routes = [
   {
@@ -23,7 +24,15 @@ const routes = [
     path: '/article/:aid',
     name: 'article',
     component: Article,
-    props: true
+    props: true,
+    children: [
+      {
+        path: 'pages/:page_num',
+        name: 'page',
+        component: Page,
+        props: true
+      }
+    ]
   }
 ]
 
