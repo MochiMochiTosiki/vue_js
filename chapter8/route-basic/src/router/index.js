@@ -19,7 +19,8 @@ const routes = [
   {
     path: '/article/:aid',
     name: 'article',
-    component: Article
+    component: Article,
+    props: true
   }
 ]
 
